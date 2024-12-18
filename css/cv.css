@@ -63,11 +63,12 @@ body {
 
 .header-letter .img-left {
   position: absolute;
+  object-fit: cover;
   top: 20px;
-  left: 20px;
+  left: 40px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .header-letter h1 {
@@ -326,11 +327,21 @@ footer {
   .container {
     padding: 15px;
   }
+  .header-letter .img-left {
+    top: 15px;
+    left: 30px;
+    gap: 15px; /* Reduce gap for smaller screens */
+  }
 }
 
 @media (max-width: 992px) {
   .header-letter img#profil {
     width: 40%; /* Lebih kecil di layar tablet */
+  }
+  .header-letter .img-left {
+    top: 10px;
+    left: 20px;
+    gap: 10px; /* Further reduce gap */
   }
 }
 
@@ -342,6 +353,14 @@ footer {
 
   .header-letter {
     flex-direction: column;
+  }
+
+  .header-letter .img-left {
+    position: relative; /* Change to relative for better layout adjustment */
+    top: auto;
+    left: auto;
+    margin: 10px auto; /* Center the image container */
+    gap: 8px; /* Smaller gap */
   }
 
   .header-letter img#profil {
@@ -372,6 +391,11 @@ footer {
     height: 10px;
   }
 
+  .fixed-buttons,
+  .back-to-home {
+    display: none;
+  }
+
   footer {
     font-size: 0.8rem;
   }
@@ -383,8 +407,17 @@ footer {
     font-size: 12px;
   }
 
+  .header-letter .img-left {
+    position: relative;
+    flex-direction: column; /* Stack items vertically */
+    top: auto;
+    left: auto;
+    margin: 5px auto; /* Add margin for centering */
+    gap: 5px; /* Minimal gap */
+  }
+
   .header-letter img#profil {
-    top: 120px;
+    top: 180px;
     width: 80%; /* Memastikan gambar tetap proporsional pada layar sangat kecil */
   }
 
@@ -414,12 +447,32 @@ footer {
     padding: 8px 12px;
     font-size: 14px;
   }
+
+  .fixed-buttons,
+  .back-to-home {
+    display: none;
+  }
 }
 @media (max-width: 480px) {
   .header-letter img#profil {
-    top: 160px;
-    width: 220px; /* Ukuran gambar lebih kecil untuk layar kecil */
+    top: 300px;
+    width: 250px; /* Ukuran gambar lebih kecil untuk layar kecil */
     height: auto;
+  }
+
+  .header-letter .img-left {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    top: auto;
+    left: auto;
+    gap: 3px; /* Minimal gap for very small screens */
+    margin: 0 auto; /* Center vertically and horizontally */
+  }
+
+  .fixed-buttons,
+  .back-to-home {
+    display: none;
   }
 }
 
@@ -455,11 +508,11 @@ footer {
 
   .container {
     width: 100%;
-    padding: 5mm;
+    padding: 1mm;
     box-shadow: none;
     border-radius: 0;
-    line-height: 0.9;
-    page-break-before: always;
+    line-height: 0.5;
+    page-break-before: avoid;
   }
 
   header {
@@ -469,22 +522,39 @@ footer {
     ); /* Gunakan warna utama sesuai variabel atau fallback langsung */
     color: var(--light, #ffffff); /* Gunakan warna terang agar kontras tinggi */
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
-  header .header-left img,
+  header .header-left img {
+    position: absolute;
+    width: 10%; /* Ukuran QR Code */
+    height: auto;
+  }
   header img#profil {
-    width: 12%; /* Ukuran gambar tetap kecil */
+    position: relative;
+    top: 50px;
+    width: 10%; /* Ukuran gambar tetap kecil */
     height: auto;
   }
 
   header h1 {
+    position: relative; /* Agar bisa diatur posisinya */
+    top: -100px;
     font-size: 16px; /* Ukuran font judul tetap kecil */
-    margin: 0;
   }
 
   header p {
     font-size: 12px;
+    position: relative; /* Agar bisa diatur posisinya */
+    top: -70px;
+  }
+
+  #modal .section-title {
+    font-size: 12px;
+    position: relative; /* Agar bisa diatur posisinya */
+    top: -60px;
+  }
+  #modal p {
     margin: 0;
   }
 
