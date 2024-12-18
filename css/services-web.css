@@ -1,0 +1,683 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #0bceaf;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #ffffff;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Roboto", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+}
+
+/* Navbar Styling */
+nav a {
+  text-decoration: none;
+}
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  background-color: var(--light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  color: var(--dark);
+}
+
+.navbar-brand h1 {
+  color: var(--dark);
+  margin: 0 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.navbar-brand h1 span {
+  color: var(--primary);
+}
+
+.navbar-toggler {
+  margin-left: 12rem;
+  right: 0%;
+  float: right;
+  display: block;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-toggler i {
+  color: var(--dark);
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 20px 20px;
+  margin: 0 7rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--primary);
+}
+
+.btn-outline-primary {
+  position: absolute;
+  justify-content: center;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Container untuk tombol agar tetap berada di sebelah kiri */
+.btn-web,
+.btn-adm {
+  display: block; /* Tombol berbaris ke bawah */
+  position: fixed; /* Tombol tetap di posisi saat scroll */
+  left: 20px; /* Jarak dari kiri layar */
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 1rem; /* Jarak antar tombol */
+  z-index: 1000; /* Pastikan tombol berada di atas konten lainnya */
+}
+.btn-dmarket {
+  display: block; /* Tombol berbaris ke bawah */
+  position: fixed; /* Tombol tetap di posisi saat scroll */
+  right: 20px; /* Jarak dari kiri layar */
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 1rem; /* Jarak antar tombol */
+  z-index: 1000;
+}
+/* Menambahkan efek hover */
+.btn-dmarket:hover,
+.btn-adm:hover {
+  background-color: var(--teal);
+  color: var(--light);
+}
+
+/* Menyusun tombol dengan jarak 5rem dari atas */
+.btn-dmarket {
+  top: 6rem; /* Tombol pertama 5rem dari atas */
+}
+
+.btn-adm {
+  top: 6rem; /* Tombol kedua 1rem lebih rendah dari tombol pertama */
+}
+
+/* Responsif untuk layar lebih besar dari 992px (misalnya desktop) */
+@media (max-width: 992px) {
+  .btn-adm {
+    left: 15px; /* Mengurangi jarak kiri untuk tampilan layar lebih kecil */
+    font-size: 14px; /* Ukuran font sedikit lebih kecil */
+  }
+
+  .btn-dmarket {
+    right: 15px; /* Mengurangi jarak kiri untuk tampilan layar lebih kecil */
+    font-size: 14px; /* Ukuran font sedikit lebih kecil */
+    top: 6rem; /* Tombol pertama 8rem dari atas */
+  }
+
+  .btn-adm {
+    top: 6rem; /* Tombol kedua lebih dekat ke tombol pertama */
+  }
+}
+
+/* Responsif untuk layar lebih kecil dari 768px (tablet) */
+@media (max-width: 768px) {
+  .btn-adm {
+    left: 10px; /* Mengurangi jarak kiri lebih jauh untuk layar lebih kecil */
+    font-size: 12px; /* Ukuran font lebih kecil */
+  }
+
+  .btn-dmarket {
+    right: 10px; /* Mengurangi jarak kiri lebih jauh untuk layar lebih kecil */
+    font-size: 12px; /* Ukuran font lebih kecil */
+    top: 6rem; /* Tombol pertama lebih dekat ke atas */
+  }
+
+  .btn-adm {
+    top: 6rem; /* Tombol kedua lebih dekat dengan tombol pertama */
+  }
+}
+
+/* Responsif untuk layar lebih kecil dari 520px (smartphone kecil) */
+@media (max-width: 520px) {
+  .btn-adm {
+    left: 5px; /* Menempatkan tombol di tepi kiri layar */
+    font-size: 12px; /* Ukuran font lebih kecil */
+    padding: 8px 16px; /* Menyesuaikan padding agar lebih pas */
+  }
+
+  .btn-dmarket {
+    right: 5px; /* Menempatkan tombol di tepi kiri layar */
+    font-size: 12px; /* Ukuran font lebih kecil */
+    padding: 8px 16px; /* Menyesuaikan padding agar lebih pas */
+    top: 6rem; /* Tombol pertama semakin mendekat ke atas */
+  }
+
+  .btn-adm {
+    top: 6rem; /* Tombol kedua semakin mendekat dengan tombol pertama */
+  }
+}
+
+/* Responsif untuk layar lebih kecil dari 480px (smartphone sangat kecil) */
+@media (max-width: 480px) {
+  .btn-adm {
+    left: 0; /* Menempatkan tombol di tepi kiri layar */
+    font-size: 10px; /* Ukuran font semakin kecil */
+    padding: 6px 12px; /* Menyesuaikan padding */
+  }
+
+  .btn-dmarket {
+    right: 0; /* Menempatkan tombol di tepi kiri layar */
+    font-size: 10px; /* Ukuran font semakin kecil */
+    padding: 6px 12px; /* Menyesuaikan padding */
+    top: 6rem; /* Tombol pertama lebih dekat ke atas */
+  }
+
+  .btn-adm {
+    top: 6rem; /* Tombol kedua lebih dekat dengan tombol pertama */
+  }
+}
+
+/* Hero Sections */
+.hero-section {
+  background: var(--primary);
+  color: var(--light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5rem;
+  padding: 5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.hero-text {
+  color: var(--light);
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text span {
+  font-size: 0.9rem;
+  color: var(--light);
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: var(--light);
+  margin: 0.5rem 0;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.hero-text p {
+  font-size: 1rem;
+  color: var(--light);
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  margin-top: 20px;
+  font-weight: 600;
+  gap: 1rem;
+  justify-content: start;
+}
+
+.btn-secondary {
+  padding: 0.8rem 1.5rem;
+  background: var(--light);
+  color: var(--primary);
+  border-color: var(--light);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.hero-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0; /* Remove extra padding */
+}
+
+.hero-img .slider img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: none;
+}
+
+.hero-img .slider img.active {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Stack elements vertically on mobile */
+    padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    text-align: center; /* Center align text */
+  }
+
+  .hero-text {
+    padding-right: 0; /* Remove right padding on mobile */
+    margin-bottom: 2rem; /* Add space below text */
+  }
+
+  .cta-buttons {
+    justify-content: center; /* Center the buttons on mobile */
+  }
+
+  .hero-img {
+    order: -1; /* Move image above text */
+    margin-bottom: 2rem; /* Add space below image */
+  }
+}
+
+/* Products Sections */
+.product-feature-section {
+  max-width: 1000px;
+  justify-content: center;
+  text-align: center;
+  margin: 50px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.service-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Gambar di bagian atas */
+.service-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  position: relative;
+  display: block;
+}
+.service-header {
+  position: relative;
+  margin-top: -100px; /* Naikkan header ke bawah gambar */
+  padding: 10px 30px;
+  background: linear-gradient(
+    to top,
+    rgb(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  ); /* Gradasi putih */
+  text-align: center;
+  z-index: 2; /* Header muncul di atas gambar */
+}
+
+.service-header h2 {
+  font-weight: bold;
+  text-shadow: 5px #333;
+  color: #343a40;
+  margin-bottom: 10px;
+}
+
+.service-header p {
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Service Content */
+.service-content {
+  padding: 30px;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Details */
+.service-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.service-item {
+  flex: 0 0 48%;
+  margin-bottom: 20px;
+  padding-bottom: 10px; /* Beri ruang antara teks dan garis */
+  border-bottom: 1px solid #ccc; /* Garis bawah tipis berwarna abu */
+}
+
+.service-item:nth-last-child(-n + 2) {
+  border-bottom: none; /* Hilangkan garis bawah pada dua item terakhir */
+}
+
+.service-item h6 {
+  font-weight: bold;
+  color: #343a40;
+}
+
+.service-item p {
+  color: #6c757d;
+  margin: 0;
+}
+.btn-container {
+  display: flex;
+  justify-content: left; /* Center align the button */
+  width: 100%;
+  align-self: flex-end; /* Align the button to the bottom of the container */
+  margin-top: 50px; /* Add space above the button */
+}
+.btn-container a {
+  text-decoration: none;
+}
+
+/* Button Styling */
+/* Button Styling */
+.btn-order {
+  background-color: var(--light); /* White background */
+  color: var(--primary); /* Teal text color */
+  border: 1px solid var(--primary); /* Teal border */
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.btn-order:hover {
+  background-color: var(--primary); /* Teal background on hover */
+  color: white; /* White text on hover */
+  border-color: var(--primary); /* Maintain the teal border on hover */
+}
+
+/* Footer Umum */
+footer {
+  padding: 30px;
+  background-color: var(--primary);
+  font-size: 14px; /* Ukuran teks lebih kecil */
+  line-height: 1.4; /* Kerenggangan antar baris lebih rapat */
+}
+
+/* Social Media Icons */
+.socials {
+  display: flex;
+  justify-content: center; /* Ikon sosial sejajar horizontal di tengah */
+  gap: 10px; /* Jarak antar ikon lebih kecil */
+  margin-bottom: 15px; /* Jarak bawah lebih kecil */
+}
+
+.socials a {
+  text-decoration: none;
+}
+
+.btn-social {
+  width: 40px; /* Ukuran ikon lebih kecil */
+  height: 40px;
+  border-radius: 50%; /* Bentuk bulat */
+  background-color: #fff; /* Latar belakang ikon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000; /* Warna ikon */
+  font-size: 16px; /* Ukuran font ikon lebih kecil */
+  transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+  background-color: #f0f0f0; /* Latar belakang hover */
+  color: #333; /* Warna ikon saat hover */
+}
+
+/* Footer Menu */
+.Footer-menu {
+  display: flex;
+  justify-content: center; /* Menu berada di tengah */
+  gap: 10px; /* Jarak antar item menu lebih kecil */
+  margin-bottom: 15px; /* Jarak bawah lebih kecil */
+}
+
+.Footer-menu a {
+  color: #fff; /* Warna teks menu */
+  text-decoration: none;
+  font-size: 14px; /* Ukuran teks lebih kecil */
+  transition: color 0.3s ease;
+}
+
+.Footer-menu a:hover {
+  color: #fff; /* Warna tetap putih saat hover */
+  text-decoration: underline;
+}
+
+/* Garis Pemisah | */
+.px-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #fff; /* Warna putih */
+}
+
+/* Footer Copyright */
+.footer-copy {
+  color: #fff; /* Teks putih */
+  font-size: 12px; /* Ukuran teks copyright lebih kecil */
+  text-align: center; /* Teks copyright di tengah */
+  margin-top: 15px; /* Jarak atas lebih kecil */
+}
+
+.footer-copy a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-copy a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar for Mobile */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 45%; /* Pusatkan secara vertikal */
+    left: 50%; /* Pusatkan secara horizontal */
+    transform: translate(-50%, -50%); /* Agar kotak mengambang di tengah */
+    width: 80%; /* Lebar kotak */
+    background: var(--light); /* Background warna terang */
+    padding: 2rem 1.5rem; /* Spasi dalam */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Bayangan untuk efek mengambang */
+    z-index: 20;
+    border-radius: 0.5rem; /* Sedikit membulatkan sudut */
+    overflow-y: auto; /* Jika menu terlalu panjang, bisa di-scroll */
+    max-height: 90%; /* Batasi tinggi maksimal agar tidak keluar layar */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0; /* Awalnya transparan */
+    pointer-events: none; /* Tidak bisa diklik saat tersembunyi */
+  }
+
+  .navbar-collapse.show {
+    opacity: 1; /* Tampilkan ketika menu aktif */
+    pointer-events: auto; /* Izinkan interaksi */
+  }
+
+  .navbar-toggler {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    border: 2px solid #ccc; /* Tambahkan garis border pada toggle */
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem; /* Sedikit membulat */
+  }
+
+  .navbar-brand {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem; /* Jarak bawah untuk logo */
+    text-align: left;
+    color: var(--primary); /* Warna logo */
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column; /* Susunan vertikal */
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    gap: 1.5rem; /* Jarak antar menu lebih renggang */
+  }
+
+  .nav-link {
+    display: block;
+    font-size: 1rem;
+    text-align: left;
+    width: 100%; /* Lebar penuh menu */
+    color: #000; /* Warna menu */
+  }
+
+  .nav-link:hover {
+    color: var(--primary); /* Warna saat dihover */
+  }
+
+  .btn-outline-primary {
+    display: none; /* Tombol Hire Me disembunyikan di mobile */
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none; /* Toggler disembunyikan pada layar besar */
+  }
+
+  .navbar-collapse {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row; /* Menu tetap horizontal di layar besar */
+  }
+
+  .nav-link {
+    margin: 0 1rem; /* Jarak horizontal antar menu */
+    padding: 0.5rem 0;
+  }
+
+  .btn-outline-primary {
+    display: inline-block; /* Tombol Hire Me muncul di layar besar */
+    width: auto;
+  }
+}

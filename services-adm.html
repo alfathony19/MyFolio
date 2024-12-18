@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services-Administration</title>
+
+    <!-- Favicon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/services-adm.css" />
+
+    <!-- Menambahkan jsPDF dan html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav
+      class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5"
+    >
+      <a href="index.html" class="navbar-brand ml-lg-3">
+        <h1 class="m-0 display-5"><span class="text-primary">My</span>Folio</h1>
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler"
+        id="navbarToggler"
+        data-toggle="collapse"
+        data-target="#navbarCollapse"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+        <ul class="navbar-nav m-auto py-0">
+          <li>
+            <a href="./index.html" class="nav-item nav-link">Home</a>
+          </li>
+          <li><a href="./index.html" class="nav-item nav-link">About</a></li>
+          <li>
+            <a href="./index.html" class="nav-item nav-link">Quality</a>
+          </li>
+          <li><a href="./index.html" class="nav-item nav-link">Skill</a></li>
+          <li>
+            <a href="./services-adm.html" class="nav-item nav-link active"
+              >Service</a
+            >
+          </li>
+          <li>
+            <a href="./index.html" class="nav-item nav-link">Portfolio</a>
+          </li>
+          <li>
+            <a href="./component/blog/blog-1.html" class="nav-item nav-link"
+              >Blog</a
+            >
+          </li>
+          <li><a href="./index.html" class="nav-item nav-link">Contact</a></li>
+        </ul>
+        <a
+          href="https://wa.me/6282319227488?text=Halo%20Saya%20tertarik%20dengan%20produk%20anda"
+          class="btn btn-outline-primary d-none d-lg-block"
+          >Hire Me</a
+        >
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    <a href="./services-web.html" class="btn-web"
+      >Service Web Development &raquo;</a
+    >
+    <a href="./services.Dmarkerting.html" class="btn-dmarket"
+      >Service Digital Marketing &raquo;</a
+    >
+
+    <!-- Modal Structure -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <!-- Modal Body with Image and Typing Effect -->
+          <div class="modal-body d-flex align-items-center">
+            <!-- Product Image -->
+            <div class="col-md-6 text-center">
+              <button class="btn-prev">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <img
+                src="./img/Resume.png"
+                alt="Phone Image"
+                class="img-fluid rounded shadow"
+              />
+              <img
+                src="./img/Report.png"
+                alt="Phone Image"
+                class="img-fluid rounded shadow"
+              />
+              <img
+                src="./img/Thesis.png"
+                alt="Phone Image"
+                class="img-fluid rounded shadow"
+              />
+              <img
+                src="./img/Official_ltr.png"
+                alt="Phone Image"
+                class="img-fluid rounded shadow"
+              />
+              <img
+                src="./img/Makalah.png"
+                alt="Phone Image"
+                class="img-fluid rounded shadow"
+              />
+              <img
+                src="./img/Proposal.png"
+                alt="Phone Image"
+                class="img-fluid rounded shadow"
+              />
+              <button class="btn-next">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+            <!-- Typing Text -->
+            <div class="col-md-6">
+              <h2>Administration Products</h2>
+              <p
+                class="typing text-secondary"
+                style="font-size: 1.2rem; font-family: Roboto, sans-serif"
+              >
+                Job application letter, CV or Resume, Project proposal, Research
+                Report, Paper, Thesis
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Cards Section -->
+    <div class="container-card py-5">
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">CV Resume</h5>
+              <p class="card-text">
+                <strong>Boost Your Career with a Professional CV!</strong
+                ><br /><br />
+                ✅ <strong>Modern & Eye-Catching Design:</strong> We create CVs
+                that highlight your skills and personality.<br />
+                ✅ <strong>Compelling Content:</strong> Tailored to grab
+                recruiters' attention and make you stand out.<br />
+                ✅ <strong>Affordable Prices:</strong> Starting at
+                <strong>$10</strong> to <strong>$30</strong>, depending on your
+                needs.<br />
+                💼 <strong>Bonus:</strong> Get 1 free revision to ensure it’s
+                exactly what you want.<br />
+                🎯 Don’t miss your chance to land your dream job! Contact us now
+                and take the first step toward your career success.<br />
+                📩 <strong>Message us for a FREE consultation today!</strong>
+              </p>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <i class="bi bi-cash-coin"></i> Price: $10
+              </h6>
+              <a
+                href="https://wa.me/6282319227488?text=Halo%20Saya%20tertarik%20dengan%20produk%20anda"
+                class="btn btn-primary-order"
+                >Order</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Job Application Letter</h5>
+              <p class="card-text">
+                🌟
+                <strong
+                  >Stand Out with a Polished and Professional Cover
+                  Letter!</strong
+                >
+                🌟 <br />
+                We ensure your application captures the recruiter’s attention
+                with professional language and structure tailored to the
+                <strong>international job market</strong>. <br />
+                💲
+                <strong
+                  >Market Price for International Cover Letter Services:</strong
+                >
+                <br />
+                Local Cover Letter (Indonesian): $3 - $10 per letter, <br />
+                English Cover Letter (International): $10 - $20 per letter,
+                <br />
+                CV + Cover Letter Package (English): $25 - $40 per package.
+                <br /><br />
+
+                🎁 <strong>Special Offer:</strong> Order now and get 2 FREE
+                revisions! <br />
+              </p>
+
+              <h6 class="card-subtitle mb-2 text-muted">
+                <i class="bi bi-cash-coin"></i> Price: $10 - $40
+              </h6>
+              <a
+                href="https://wa.me/6282319227488?text=Halo%20Saya%20tertarik%20dengan%20produk%20anda"
+                class="btn btn-primary-order"
+                >Order</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Project Proposal</h5>
+              <p class="card-text">
+                Are you looking for a professional project proposal that stands
+                out? <strong>Our expert team</strong> specializes in creating
+                tailored proposals for various industries, including business,
+                social, and education. Whether you're seeking funding,
+                partnerships, or new opportunities, we ensure your proposal
+                captures attention with <strong>persuasive content</strong>,
+                <strong>custom designs</strong>, and realistic budgets.
+                <br />
+                We take the time to understand your unique project needs and
+                deliver
+                <strong>high-quality, well-structured proposals</strong> that
+                meet your specific goals. 💼✨ <br />
+                Prices start from <strong>$100</strong> for basic proposals and
+                can vary depending on complexity. We also offer packages for
+                ongoing projects.
+              </p>
+
+              <h6 class="card-subtitle mb-2 text-muted">
+                <i class="bi bi-cash-coin"></i> Price: $100
+              </h6>
+              <a
+                href="https://wa.me/6282319227488?text=Halo%20Saya%20tertarik%20dengan%20produk%20anda"
+                class="btn btn-primary-order"
+                >Order</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-card py-5">
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <!-- Card 4 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Research Report</h5>
+              <p class="card-text">
+                <strong>Need a professional Research Report?</strong> We provide
+                comprehensive research, detailed data analysis, and
+                well-structured reports tailored to your needs.
+                <br /><br /><strong>Our services include:</strong><br />
+                <i class="fas fa-chart-line"></i> Market Research <br />
+                <i class="fas fa-search"></i> Feasibility Studies <br />
+                <i class="fas fa-database"></i> Data Analysis <br />
+                <i class="fas fa-book"></i> Academic Reports <br /><br />
+                <strong>Prices:</strong> Ranging from $500 to $5,000 depending
+                on the complexity. <br />
+                Contact us now for a free consultation and competitive pricing!
+              </p>
+
+              <h6 class="card-subtitle mb-2 text-muted">
+                <i class="bi bi-cash-coin"></i> Price: $500
+              </h6>
+              <a
+                href="https://wa.me/6282319227488?text=Halo%20Saya%20tertarik%20dengan%20produk%20anda"
+                class="btn btn-primary-order"
+                >Order</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Paper</h5>
+              <p class="card-text">
+                <strong>🚀 High-Quality Paper Writing Service! 📄</strong><br />
+                We offer professional and reliable paper writing services to
+                meet your academic needs. Whether it's research papers, essays,
+                or case studies, our experienced writers will deliver
+                plagiarism-free and well-researched content. <br /><br />
+                <strong>💼 Affordable Pricing:</strong> Prices start from
+                <strong>$10 per page</strong>, depending on the complexity and
+                urgency. <br />
+                Get your paper done on time and excel in your studies with our
+                expert assistance! 🌟
+              </p>
+
+              <h6 class="card-subtitle mb-2 text-muted">
+                <i class="bi bi-cash-coin"></i> Price: $10
+              </h6>
+              <a
+                href="https://wa.me/6282319227488?text=Halo%20Saya%20tertarik%20dengan%20produk%20anda"
+                class="btn btn-primary-order"
+                >Order</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Thesis</h5>
+              <p class="card-text">
+                <strong>Need Help with Your Thesis?</strong> Our expert team is
+                here to provide high-quality, customized thesis writing
+                services. We ensure thorough research, proper formatting, and
+                fast delivery at affordable rates.<br />
+                <br />
+                📚 <strong>Pricing:</strong><br />
+                - <strong>Standard Thesis</strong>: $500 - $800<br />
+                - <strong>Advanced Thesis</strong>: $900 - $1,200<br />
+                - <strong>Urgent Thesis</strong>: $1,300 - $1,500<br />
+                <br />
+                Get in touch with us for professional assistance and start your
+                thesis journey today!
+              </p>
+
+              <h6 class="card-subtitle mb-2 text-muted">
+                <i class="bi bi-cash-coin"></i> Price: $500
+              </h6>
+              <a
+                href="https://wa.me/6282319227488?text=Halo%20Saya%20tertarik%20dengan%20produk%20anda"
+                class="btn btn-primary-order"
+                >Order</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container-fluid bg-primary text-white py-5 px-sm-3 px-md-5">
+        <div class="container text-center py-5">
+          <div class="socials d-flex justify-content-center mb-4">
+            <a
+              class="btn btn-light btn-social mr-2"
+              href="https://web.facebook.com/aldo.a.fathony/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-light btn-social mr-2"
+              href="https://linkedin.com/in/aldo-abdillah-fathony-144b06303"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              class="btn btn-light btn-social"
+              href="https://www.instagram.com/alfathony.19?igsh=MWw0dzNjb2YzbzNwaQ=="
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+          <div class="Footer-menu d-flex justify-content-center mb-3">
+            <a class="text-white" href="./privacy.html">Privacy</a>
+            <span class="px-3">|</span>
+            <a class="text-white" href="./terms.html">Terms</a>
+            <span class="px-3">|</span>
+            <a class="text-white" href="./faqs.html">FAQs</a>
+            <span class="px-3">|</span>
+            <a class="text-white" href="./help.html">Help</a>
+          </div>
+          <p class="footer-copy m-0">
+            &copy;
+            <a class="text-white font-weight-bold" href="./index.html"
+              >MyFolio</a
+            >. All Rights Reserved. Designed by
+            <a
+              class="text-white font-weight-bold"
+              href="https://wa.me/6282319227488?text=Halo%20Saya%20tertarik%20dengan%20produk%20anda"
+              >Aldo Abdillah Fathony</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="./js/service-adm.js"></script>
+  </body>
+</html>

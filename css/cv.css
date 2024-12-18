@@ -1,0 +1,571 @@
+/* Var Color */
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #0bceaf;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #ffffff;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Roboto", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+/* General Style */
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Container utama */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-letter {
+  background-color: var(--primary); /* Warna latar belakang */
+  padding: 20px;
+  position: relative;
+}
+
+.header-letter .img-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-letter h1 {
+  margin: 20px 0 5px;
+  color: #fff; /* Primary color */
+  text-align: center;
+}
+
+.header-letter p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f4f4f4; /* Secondary color */
+  text-align: center;
+}
+
+.header-letter img#profil {
+  position: absolute;
+  top: 20px; /* Sejajar dengan H1 */
+  right: 2px; /* Posisi di kanan atas */
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  padding-left: 15px;
+  border-radius: 5px; /* Sedikit sudut melengkung */
+  object-fit: cover;
+}
+
+#modal {
+  margin-top: 10px; /* Jarak dari header */
+  max-width: 800px; /* Lebar maksimal untuk paragraf */
+  margin-left: auto; /* Rata tengah */
+  margin-right: auto; /* Rata tengah */
+  text-align: left; /* Teks rata kiri */
+  padding: 10px 20px; /* Padding untuk bingkai abu-abu */
+  position: relative;
+}
+
+#modal .section-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff; /* Biru sesuai tema */
+}
+
+#modal p {
+  text-align: justify;
+  font-size: 0.8rem;
+  margin: 0;
+  padding-top: 10px; /* Tambahkan jarak antara judul dan paragraf */
+  line-height: 1.6; /* Spasi antar-baris */
+}
+
+#modal {
+  max-width: calc(100% - 210px); /* Hindari teks melebar ke gambar */
+  padding: 10px 20px;
+  margin-left: 0;
+}
+
+/* Container utama yang menampung kedua section */
+.container-main {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 20px auto;
+  gap: 20px; /* Menjaga jarak antara kedua section */
+  justify-content: space-between; /* Pastikan dua section rata kiri-kanan */
+}
+
+/* Kode sebelumnya untuk .section-left dan .section-right */
+.section-left,
+.section-right {
+  flex: 1 1 calc(50% - 20px); /* Membuat lebar section 50% dengan sedikit gap antar section */
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box; /* Menghindari masalah overflow */
+}
+
+/* Warna latar belakang */
+.section-left {
+  background-color: #f8f9fa; /* Light Gray */
+}
+
+.section-right {
+  background-color: #ffffff; /* White */
+}
+
+/* Styling untuk judul setiap section */
+.section-titlePr {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: #fff; /* Biru sesuai tema */
+}
+.contact {
+  border-radius: 10px;
+  background-color: #0ee2bf;
+  color: var(--light);
+}
+
+.h6 {
+  text-align: center;
+  left: 50%;
+  justify-content: center;
+}
+
+.skill-progress {
+  padding-left: 10px;
+  border-radius: 10px;
+  background-color: #0ee2bf;
+  color: var(--light);
+}
+
+.hobies {
+  text-align: center;
+  border-radius: 10px;
+  background-color: #0ee2bf;
+  color: var(--light);
+}
+
+.section-titleSd {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: var(--primary); /* Biru sesuai tema */
+}
+
+/* Styling untuk Progress Bars */
+.progress-bar {
+  text-align: left;
+  height: 15px;
+  border-radius: 5px;
+  width: 0%; /* Awal width 0 untuk animasi */
+  transition: width 1s ease-in-out;
+}
+
+.progress-bar.bg-primary {
+  background-color: #007bff;
+}
+
+.progress-bar.bg-success {
+  background-color: #28a745;
+}
+
+.progress-bar.bg-warning {
+  background-color: #ffc107;
+}
+
+.progress-bar.bg-danger {
+  background-color: #dc3545;
+}
+
+.progress-bar.bg-info {
+  background-color: #17a2b8;
+}
+/* Main Cover Letter Styling */
+.mainCover {
+  background: #f8f9fa;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Paragraphs inside Main Cover */
+.mainCover p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Strong Elements */
+.mainCover strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Signature Image */
+.mainCover img {
+  display: block;
+  margin: 5px -30px;
+  border: none;
+}
+
+.fixed-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column; /* Mengubah tombol jadi vertikal */
+  gap: 10px; /* Memberikan jarak antar tombol */
+  z-index: 1000;
+}
+
+.fixed-buttons .btn {
+  background-color: #0bceaf;
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fixed-buttons .btn:hover {
+  color: var(--light);
+  background-color: var(teal);
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fixed-buttons .btn:active {
+  transform: scale(1);
+}
+/* Style for the Back to Home button */
+.back-to-home {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #0bceaf; /* Teal text */
+  border: 2px solid #0bceaf; /* Teal outline */
+  background-color: transparent; /* Transparent background */
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears on top */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.back-to-home:hover {
+  background-color: #0bceaf; /* Teal background on hover */
+  color: white; /* White text on hover */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-letter img#profil {
+    width: 40%; /* Lebih kecil di layar tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Atur font-size responsif */
+  body {
+    font-size: 14px;
+  }
+
+  .header-letter {
+    flex-direction: column;
+  }
+
+  .header-letter img#profil {
+    width: 60%; /* Lebih kecil lagi di layar kecil */
+  }
+
+  /* Layout container menjadi kolom */
+  .container-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Menyusun container utama menjadi satu kolom */
+  .container-main,
+  .section-left,
+  .section-right {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  /* Menyesuaikan ukuran font pada elemen tertentu */
+  .section-titlePr,
+  .section-titleSd {
+    font-size: 1.2rem;
+  }
+
+  .progress-bar {
+    height: 10px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Pengaturan font-size lebih kecil untuk layar sangat kecil */
+  body {
+    font-size: 12px;
+  }
+
+  .header-letter img#profil {
+    top: 120px;
+    width: 80%; /* Memastikan gambar tetap proporsional pada layar sangat kecil */
+  }
+
+  .header-letter h1 {
+    font-size: 1.5rem;
+  }
+
+  .container-main {
+    padding: 10px;
+  }
+
+  .section-left,
+  .section-right {
+    flex: 1 1 100%; /* Mengatur section menjadi 100% lebar */
+    margin-bottom: 10px;
+  }
+
+  .section-titlePr {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+
+  .fixed-buttons .btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .header-letter img#profil {
+    top: 160px;
+    width: 220px; /* Ukuran gambar lebih kecil untuk layar kecil */
+    height: auto;
+  }
+}
+
+/* Styling untuk elemen progress-bar */
+.progress-bar.bg-primary {
+  background-color: var(--blue);
+}
+
+.progress-bar.bg-success {
+  background-color: var(--green);
+}
+
+.progress-bar.bg-warning {
+  background-color: var(--yellow);
+}
+
+.progress-bar.bg-danger {
+  background-color: var(--red);
+}
+
+.progress-bar.bg-info {
+  background-color: var(--cyan);
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Pastikan latar belakang sesuai dengan tampilan di layar */
+    color: #333; /* Teks gelap agar kontras tinggi di hasil cetak */
+    font-family: "Roboto", sans-serif;
+  }
+
+  .container {
+    width: 100%;
+    padding: 5mm;
+    box-shadow: none;
+    border-radius: 0;
+    line-height: 0.9;
+    page-break-before: always;
+  }
+
+  header {
+    background-color: var(
+      --primary,
+      #0bceaf
+    ); /* Gunakan warna utama sesuai variabel atau fallback langsung */
+    color: var(--light, #ffffff); /* Gunakan warna terang agar kontras tinggi */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  header .header-left img,
+  header img#profil {
+    width: 12%; /* Ukuran gambar tetap kecil */
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 16px; /* Ukuran font judul tetap kecil */
+    margin: 0;
+  }
+
+  header p {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .container-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 1;
+    gap: 10px;
+  }
+
+  .section-left,
+  .section-right {
+    flex: 1 1 48%; /* Kiri dan kanan memiliki lebar yang sama */
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .section-titlePr {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: #fff; /* Biru sesuai tema */
+  }
+  .section-titleSd {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    color: var(--primary); /* Biru sesuai tema */
+  }
+
+  /* Progress Bars */
+  .progress-bar {
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .progress-bar.bg-primary {
+    background-color: #007bff; /* Biru utama sesuai tema */
+  }
+
+  .progress-bar.bg-success {
+    background-color: #28a745; /* Hijau terang */
+  }
+
+  .progress-bar.bg-warning {
+    background-color: #ffc107; /* Kuning terang */
+  }
+
+  .progress-bar.bg-danger {
+    background-color: #dc3545; /* Merah terang */
+  }
+
+  .progress-bar.bg-info {
+    background-color: #17a2b8; /* Biru muda */
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555; /* Teks footer lebih gelap agar kontras dengan latar belakang */
+    margin-top: 5px;
+    padding: 10px 0;
+  }
+
+  .fixed-buttons,
+  .back-to-home {
+    display: none;
+  }
+
+  /* Pastikan margin dan padding seragam di semua elemen untuk cetakan rapi */
+  * {
+    margin: 0;
+    padding: 1px; /* Sesuaikan padding agar lebih presisi di cetakan */
+  }
+}

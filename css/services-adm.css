@@ -1,0 +1,660 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #0bceaf;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #ffffff;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Roboto", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+}
+
+/* Navbar Styling */
+nav a {
+  text-decoration: none;
+}
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  background-color: var(--light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  color: var(--dark);
+}
+
+.navbar-brand h1 {
+  color: var(--dark);
+  margin: 0 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.navbar-brand h1 span {
+  color: var(--primary);
+}
+
+.navbar-toggler {
+  margin-left: 12rem;
+  right: 0%;
+  float: right;
+  display: block;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-toggler i {
+  color: var(--dark);
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 20px 20px;
+  margin: 0 7rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--primary);
+}
+
+.btn-outline-primary {
+  position: absolute;
+  justify-content: center;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* Container untuk tombol agar tetap berada di sebelah kiri */
+.btn-web,
+.btn-dmarket {
+  display: block; /* Tombol berbaris ke bawah */
+  position: fixed; /* Tombol tetap di posisi saat scroll */
+  right: 20px; /* Jarak dari kiri layar */
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 1rem; /* Jarak antar tombol */
+  z-index: 1000; /* Pastikan tombol berada di atas konten lainnya */
+}
+
+/* Menambahkan efek hover */
+.btn-web:hover,
+.btn-dmarket:hover {
+  background-color: var(--teal);
+  color: var(--light);
+}
+
+/* Menyusun tombol dengan jarak 5rem dari atas */
+.btn-web {
+  top: 6rem; /* Tombol pertama 5rem dari atas */
+}
+
+.btn-dmarket {
+  top: 9rem; /* Tombol kedua 1rem lebih rendah dari tombol pertama */
+}
+
+/* Responsif untuk layar lebih besar dari 992px (misalnya desktop) */
+@media (max-width: 992px) {
+  .btn-web,
+  .btn-dmarket {
+    right: 15px; /* Mengurangi jarak kiri untuk tampilan layar lebih kecil */
+    font-size: 14px; /* Ukuran font sedikit lebih kecil */
+  }
+
+  .btn-web {
+    top: 6rem; /* Tombol pertama 8rem dari atas */
+  }
+
+  .btn-adm {
+    top: 8rem; /* Tombol kedua lebih dekat ke tombol pertama */
+  }
+}
+
+/* Responsif untuk layar lebih kecil dari 768px (tablet) */
+@media (max-width: 768px) {
+  .btn-web,
+  .btn-dmarket {
+    right: 10px; /* Mengurangi jarak kiri lebih jauh untuk layar lebih kecil */
+    font-size: 12px; /* Ukuran font lebih kecil */
+  }
+
+  .btn-web {
+    top: 6rem; /* Tombol pertama lebih dekat ke atas */
+  }
+
+  .btn-adm {
+    top: 8rem; /* Tombol kedua lebih dekat dengan tombol pertama */
+  }
+}
+
+/* Responsif untuk layar lebih kecil dari 520px (smartphone kecil) */
+@media (max-width: 520px) {
+  .btn-web,
+  .btn-dmarket {
+    right: 5px; /* Menempatkan tombol di tepi kiri layar */
+    font-size: 12px; /* Ukuran font lebih kecil */
+    padding: 8px 16px; /* Menyesuaikan padding agar lebih pas */
+  }
+
+  .btn-web {
+    top: 6rem; /* Tombol pertama semakin mendekat ke atas */
+  }
+
+  .btn-dmarket {
+    top: 8rem; /* Tombol kedua semakin mendekat dengan tombol pertama */
+  }
+}
+
+/* Responsif untuk layar lebih kecil dari 480px (smartphone sangat kecil) */
+@media (max-width: 480px) {
+  .btn-web,
+  .btn-dmarket {
+    right: 0;
+    font-size: 10px; /* Ukuran font semakin kecil */
+    padding: 6px 12px; /* Menyesuaikan padding */
+  }
+
+  .btn-web {
+    top: 6rem; /* Tombol pertama lebih dekat ke atas */
+  }
+
+  .btn-dmarket {
+    top: 8rem; /* Tombol kedua lebih dekat dengan tombol pertama */
+  }
+}
+
+.modal-body {
+  color: var(--light);
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 2rem;
+}
+
+.col-md-6.text-center {
+  position: relative;
+}
+
+.img-fluid {
+  display: none;
+  margin-top: 4rem;
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+}
+
+.img-fluid.active {
+  display: block;
+}
+
+.btn-prev,
+.btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--light);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.btn-prev {
+  left: -1.5rem;
+  font-size: 20px;
+}
+
+.btn-next {
+  font-size: 20px;
+  right: -1.5rem;
+}
+
+h2 {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.typing {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  border-right: 2px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Ensure the container is centered and has padding */
+.container-card {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  max-width: 1140px; /* Optional: to limit container width on larger screens */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Adjust the row to center the cards */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap onto the next line */
+  justify-content: center; /* Center the cards in the row */
+  gap: 1.5rem; /* Add space between the cards */
+}
+
+/* Card styling */
+.card {
+  width: 100%; /* Default to full width for small screens */
+  max-width: 350px; /* Limit card width */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 40px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-body a {
+  text-decoration: none;
+  margin-bottom: 20px;
+  bottom: 10%;
+}
+
+/* Card title styling */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #343a40; /* Dark gray */
+}
+
+/* Card text styling */
+.card-text {
+  text-align: justify;
+  color: #6c757d; /* Medium gray */
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+
+/* Card subtitle styling */
+.card-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #007bff; /* Bootstrap primary color */
+}
+
+/* Button styling */
+.btn-primary-order {
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  background-color: var(--light);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+}
+
+.btn-primary-order:hover {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+/* Warna Latar Footer */
+.bg-primary {
+  background-color: var(--primary); /* Hijau terang sesuai gambar */
+}
+
+/* Container Footer */
+.container-fluid {
+  padding-top: 20px; /* Jarak atas lebih kecil */
+  padding-bottom: 20px; /* Jarak bawah lebih kecil */
+  margin: 0 auto; /* Pusatkan container */
+}
+
+/* Footer Umum */
+footer {
+  font-size: 14px; /* Ukuran teks lebih kecil */
+  line-height: 1.4; /* Kerenggangan antar baris lebih rapat */
+}
+.container-fluid {
+  max-width: 100%;
+}
+/* Social Media Icons */
+.socials {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center; /* Ikon sosial sejajar horizontal di tengah */
+  gap: 10px; /* Jarak antar ikon lebih kecil */
+  margin-bottom: 15px; /* Jarak bawah lebih kecil */
+}
+
+.socials a {
+  text-decoration: none;
+}
+
+.btn-social {
+  width: 40px; /* Ukuran ikon lebih kecil */
+  height: 40px;
+  border-radius: 50%; /* Bentuk bulat */
+  background-color: #fff; /* Latar belakang ikon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000; /* Warna ikon */
+  font-size: 16px; /* Ukuran font ikon lebih kecil */
+  transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+  background-color: #f0f0f0; /* Latar belakang hover */
+  color: #333; /* Warna ikon saat hover */
+}
+
+/* Footer Menu */
+.Footer-menu {
+  display: flex;
+  justify-content: center; /* Menu berada di tengah */
+  gap: 10px; /* Jarak antar item menu lebih kecil */
+  margin-bottom: 15px; /* Jarak bawah lebih kecil */
+}
+
+.Footer-menu a {
+  color: #fff; /* Warna teks menu */
+  text-decoration: none;
+  font-size: 14px; /* Ukuran teks lebih kecil */
+  transition: color 0.3s ease;
+}
+
+.Footer-menu a:hover {
+  color: #fff; /* Warna tetap putih saat hover */
+  text-decoration: underline;
+}
+
+/* Garis Pemisah | */
+.px-3 {
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #fff; /* Warna putih */
+}
+
+/* Footer Copyright */
+.footer-copy {
+  color: #fff; /* Teks putih */
+  font-size: 12px; /* Ukuran teks copyright lebih kecil */
+  text-align: center; /* Teks copyright di tengah */
+  margin-top: 15px; /* Jarak atas lebih kecil */
+}
+
+.footer-copy a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-copy a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 1rem); /* 2 cards per row on medium screens */
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%; /* 1 card per row on small screens */
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .btn-primary {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .modal-body {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .col-md-6.text-center {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .btn-prev {
+    left: -1rem;
+  }
+
+  .btn-next {
+    right: -1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .typing {
+    font-size: 1rem;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+/* Sidebar for Mobile */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 45%; /* Pusatkan secara vertikal */
+    left: 50%; /* Pusatkan secara horizontal */
+    transform: translate(-50%, -50%); /* Agar kotak mengambang di tengah */
+    width: 80%; /* Lebar kotak */
+    background: var(--light); /* Background warna terang */
+    padding: 2rem 1.5rem; /* Spasi dalam */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Bayangan untuk efek mengambang */
+    z-index: 20;
+    border-radius: 0.5rem; /* Sedikit membulatkan sudut */
+    overflow-y: auto; /* Jika menu terlalu panjang, bisa di-scroll */
+    max-height: 90%; /* Batasi tinggi maksimal agar tidak keluar layar */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0; /* Awalnya transparan */
+    pointer-events: none; /* Tidak bisa diklik saat tersembunyi */
+  }
+
+  .navbar-collapse.show {
+    opacity: 1; /* Tampilkan ketika menu aktif */
+    pointer-events: auto; /* Izinkan interaksi */
+  }
+
+  .navbar-toggler {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    border: 2px solid #ccc; /* Tambahkan garis border pada toggle */
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem; /* Sedikit membulat */
+  }
+
+  .navbar-brand {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem; /* Jarak bawah untuk logo */
+    text-align: left;
+    color: var(--primary); /* Warna logo */
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column; /* Susunan vertikal */
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    gap: 1.5rem; /* Jarak antar menu lebih renggang */
+  }
+
+  .nav-link {
+    display: block;
+    font-size: 1rem;
+    text-align: left;
+    width: 100%; /* Lebar penuh menu */
+    color: #000; /* Warna menu */
+  }
+
+  .nav-link:hover {
+    color: var(--primary); /* Warna saat dihover */
+  }
+
+  .btn-outline-primary {
+    display: none; /* Tombol Hire Me disembunyikan di mobile */
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none; /* Toggler disembunyikan pada layar besar */
+  }
+
+  .navbar-collapse {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row; /* Menu tetap horizontal di layar besar */
+  }
+
+  .nav-link {
+    margin: 0 1rem; /* Jarak horizontal antar menu */
+    padding: 0.5rem 0;
+  }
+
+  .btn-outline-primary {
+    display: inline-block; /* Tombol Hire Me muncul di layar besar */
+    width: auto;
+  }
+}
